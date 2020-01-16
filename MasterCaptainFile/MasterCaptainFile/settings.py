@@ -76,9 +76,9 @@ WSGI_APPLICATION = 'MasterCaptainFile.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Alabastra',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'Cc3058366',
+        'PASSWORD': 'Aass2211',
         'HOST': 'localhost'
     }
 }
