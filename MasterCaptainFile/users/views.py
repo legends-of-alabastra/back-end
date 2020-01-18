@@ -13,10 +13,12 @@ def login(request):
 
         if user is not None:
             messages.info(request, "Success!")
+            print('welcome {username}')
             auth.login(request, user)
             return redirect("/")
         else:
             messages.info(request, "invalid credentials")
+            print('could not login')
             return redirect('login')
             
             
