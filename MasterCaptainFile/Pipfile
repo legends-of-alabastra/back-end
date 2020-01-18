@@ -12,6 +12,7 @@ psycopg2-binary = "*"
 dj-database-url = "*"
 whitenoise = "*"
 django-heroku = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.8"
