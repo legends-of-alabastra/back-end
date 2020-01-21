@@ -33,6 +33,9 @@ ALLOWED_HOSTS = ['https://alabastrasisland.herokuapp.com/']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
+    'rest_framework',
+    'knox',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,9 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
-    'corsheaders',
-    'rest_framework',
-    'knox'
+
 ]
 
 REST_FRAMEWORK = {
