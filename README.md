@@ -6,7 +6,7 @@
 
 ## Welcome
 
-Find the production server at: https://workouttrackerprod.herokuapp.com/
+Find the production server at: https://alabastraapp.herokuapp.com/
 
 This is the HQ of The Legends of Alabastra MUD Build Weeks Team. Where all the magic happens ;)
 
