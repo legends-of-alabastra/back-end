@@ -27,7 +27,7 @@ SECRET_KEY = '3n(mu)(4df7m!3f+%kuens)@1yqyypd86zedb%tsnd&kkal)h='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://alabastrasisland.herokuapp.com/']
+ALLOWED_HOSTS = ['https://https://alabastraapp.herokuapp.com/']
 
 
 # Application definition
@@ -42,13 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users.apps.UsersConfig',
+    'users.apps.UsersConfig'
 
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
 }
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -89,7 +90,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'Cc3058366'
+        'PASSWORD': 'Cc3058366',
+        'HOST': 'localhost'
     }
 }
 
