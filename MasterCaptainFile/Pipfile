@@ -13,6 +13,7 @@ dj-database-url = "*"
 whitenoise = "*"
 django-heroku = "*"
 django-cors-headers = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.8"
