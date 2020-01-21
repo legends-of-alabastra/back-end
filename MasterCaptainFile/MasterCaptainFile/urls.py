@@ -18,8 +18,8 @@ from django.urls import path, include
 from users import views as user_views
 
 urlpatterns = [
+    # path('/', user_views.token, name = 'token'),
+    path('', include('users.urls')),
     path('admin/', admin.site.urls),
-    path('users/register/', user_views.register, name = 'register'),
-    path('users/login/', user_views.login, name = 'login'),
-    path('users/logout/', user_views.logout, name = 'logout')
+
 ]
