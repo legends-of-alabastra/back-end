@@ -27,7 +27,7 @@ SECRET_KEY = '3n(mu)(4df7m!3f+%kuens)@1yqyypd86zedb%tsnd&kkal)h='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://alabastrasisland.herokuapp.com/']
+ALLOWED_HOSTS = ['https://https://alabastraapp.herokuapp.com/']
 
 
 # Application definition
