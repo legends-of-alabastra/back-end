@@ -15,6 +15,7 @@ django-heroku = "*"
 django-cors-headers = "*"
 djangorestframework = "*"
 knox = "*"
+django-restknox = "*"
 
 [requires]
 python_version = "3.8"
