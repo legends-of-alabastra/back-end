@@ -130,5 +130,6 @@ STATICFILES_DIRS = (
 )
 
 CORS_ORIGIN_ALLOW_ALL = True
+CSRF_COOKIE_NAME = "csrftoken"
 
 django_heroku.settings(locals())
