@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,12 +27,15 @@ SECRET_KEY = '3n(mu)(4df7m!3f+%kuens)@1yqyypd86zedb%tsnd&kkal)h='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://alabastrasisland.herokuapp.com/']
+ALLOWED_HOSTS = ['https://https://alabastraapp.herokuapp.com/']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
+    'rest_framework',
+    'knox',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,13 +45,19 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'users.apps.UsersConfig',
     'pirateAdventure.apps.PirateadventureConfig'
+
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+}
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -84,6 +94,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'Aass2211',
         'HOST': 'localhost'
+
     }
 }
 
@@ -128,5 +139,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 django_heroku.settings(locals())
