@@ -1,4 +1,5 @@
 from django.db import models
+from users import *
 
 # ROOM CLASS'S
 #########################################################
@@ -66,13 +67,14 @@ class Weapon(Item):
 # PLAYER CLASS'S
 #########################################################
 #########################################################
-class Player(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    currentRoom = models.IntegerField(default = 0)
-    uuid = models.UUIDField(default = uuid.uuid4, unique=true)
 
-    def initialize(self):
-        if self.currentRoom == 0:
-            self.currentRoom = Room.objects.first().id
-            self.save()
+# class Player(models.Model):
+#     user = models.OneToOneField(UserAPI, on_delete=models.CASCADE)
+#     currentRoom = models.IntegerField(default = 0)
+#     uuid = models.UUIDField(default = uuid.uuid4, unique=true)
+
+#     def initialize(self):
+#         if self.currentRoom == 0:
+#             self.currentRoom = Room.objects.first().id
+#             self.save()
     
