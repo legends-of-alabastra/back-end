@@ -38,33 +38,39 @@ class Room(models.Model):
     def playerUUIDs(self, currentPlayerID):
         return [p.uuid for p in Player.objects.filter(currentRoom=self.id) if p.id != int(currentPlayerID)]
 
-class Player(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    currentRoom = models.IntegerField(default = 0)
-    uuid = models.UUIDField(default = uuid.uuid4, unique=true)
+class Item(models.Model):
+    name = models.CharField(max_length=255, default="DEFAULT ITEM")
+    description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
+    value = models.IntegerField(default=0)
 
-    def initialize(self):
-        if self.currentRoom == 0:
-            self.currentRoom = Room.objects.first().id
-            self.save()
     
-    def room(self):
-        try:
-            return Room.objects.get(id = self.currentRoom)
-        except Room.DoesNotExist:
-            self.initialize()
-            return self.room()
+# class Player(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     currentRoom = models.IntegerField(default = 0)
+#     uuid = models.UUIDField(default = uuid.uuid4, unique=true)
+
+#     def initialize(self):
+#         if self.currentRoom == 0:
+#             self.currentRoom = Room.objects.first().id
+#             self.save()
+    
+#     def room(self):
+#         try:
+#             return Room.objects.get(id = self.currentRoom)
+#         except Room.DoesNotExist:
+#             self.initialize()
+#             return self.room()
 
 
-@receiver(post_save, sender = User)
+# @receiver(post_save, sender = User)
 
-def create_user_player(sender, instance, created, **kwargs):
-    if created:
-        Player.objects.create(user = instance)
-        Token.objects.create(user = instance)
+# def create_user_player(sender, instance, created, **kwargs):
+#     if created:
+#         Player.objects.create(user = instance)
+#         Token.objects.create(user = instance)
 
 
-@receiver(post_save, sender = User)
+# @receiver(post_save, sender = User)
 
-def save_user_player(sender, instance, **kwargs):
-    instance.player.save()
+# def save_user_player(sender, instance, **kwargs):
+#     instance.player.save()
