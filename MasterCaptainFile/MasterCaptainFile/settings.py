@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'users.apps.UsersConfig',
     'pirateAdventure.apps.PirateadventureConfig'
 
@@ -92,6 +93,8 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'Aass2211',
+        'HOST': 'localhost'
+
     }
 }
 

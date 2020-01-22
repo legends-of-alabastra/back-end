@@ -38,6 +38,13 @@ class Room(models.Model):
     def playerUUIDs(self, currentPlayerID):
         return [p.uuid for p in Player.objects.filter(currentRoom=self.id) if p.id != int(currentPlayerID)]
 
+
+class Item(models.Model):
+    name = models.CharField(max_length=255, default="DEFAULT ITEM")
+    description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
+    value = models.IntegerField(default=0)
+
+    
 # class Player(models.Model):
 #     user = models.OneToOneField(User, on_delete=models.CASCADE)
 #     currentRoom = models.IntegerField(default = 0)
@@ -48,6 +55,18 @@ class Room(models.Model):
 #             self.currentRoom = Room.objects.first().id
 #             self.save()
     
+=======
+# class Player(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     currentRoom = models.IntegerField(default = 0)
+#     uuid = models.UUIDField(default = uuid.uuid4, unique=true)
+
+#     def initialize(self):
+#         if self.currentRoom == 0:
+#             self.currentRoom = Room.objects.first().id
+#             self.save()
+    
+
 #     def room(self):
 #         try:
 #             return Room.objects.get(id = self.currentRoom)
