@@ -1,6 +1,8 @@
 from django.db import models
 
-# Create your models here.
+# ROOM CLASS'S
+#########################################################
+#########################################################
 class Room(models.Model):
     title = models.CharField(max_length=50, default="DEFAULT TITLE")
     description = models.CharField(max_length=500, default="DEFAULT DESCRIPTION")
@@ -38,13 +40,32 @@ class Room(models.Model):
     def playerUUIDs(self, currentPlayerID):
         return [p.uuid for p in Player.objects.filter(currentRoom=self.id) if p.id != int(currentPlayerID)]
 
+    def __str__(self):
+        return self.title + self.description
 
+# ITEM CLASS'S
+##########################################################
+#########################################################
 class Item(models.Model):
     name = models.CharField(max_length=255, default="DEFAULT ITEM")
     description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
     value = models.IntegerField(default=0)
 
-    
+
+class Weapon(Item):
+    attack_power = models.IntegerField(default=0)
+    durability = models.IntegerField(default=100)
+
+    def __str__(self):
+        return self.name
+        
+
+
+
+
+# PLAYER CLASS'S
+#########################################################
+#########################################################
 # class Player(models.Model):
 #     user = models.OneToOneField(User, on_delete=models.CASCADE)
 #     currentRoom = models.IntegerField(default = 0)
