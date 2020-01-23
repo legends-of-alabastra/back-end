@@ -41,4 +41,4 @@ class LoginSerializer(serializers.Serializer):
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = ['username', 'currentRoom', 'uuid']
+        fields = ['username', 'currentRoom']
