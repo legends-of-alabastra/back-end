@@ -1,7 +1,9 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-
+import sys
+sys.path.append('../')
+from pirateAdventure.models import Player
 # User Serializer
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,3 +36,9 @@ class LoginSerializer(serializers.Serializer):
         if user and user.is_active:
             return user
         raise serializers.ValidationError("Incorrect Credentials")
+
+# Player Serializer
+class PlayerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Player
+        fields = ['username', 'currentRoom', 'uuid']

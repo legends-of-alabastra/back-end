@@ -1,5 +1,9 @@
 from django.db import models
+import sys
+# sys.path.insert(0, "/MasterCaptainFile/users/api")
 
+# sys.path.append('../')
+# from users.serializers import UserSerializer
 
 # ROOM CLASS'S
 #########################################################
@@ -69,13 +73,13 @@ class Weapon(Item):
 #########################################################
 #########################################################
 
-# class Player(models.Model):
-#     user = models.OneToOneField(UserAPI, on_delete=models.CASCADE)
-#     currentRoom = models.IntegerField(default = 0)
-#     uuid = models.UUIDField(default = uuid.uuid4, unique=true)
+class Player(models.Model):
+    username = models.CharField(max_length=30, blank=False)
+    currentRoom = models.IntegerField(default = 0)
+    # uuid = models.UUIDField(default = uuid.uuid4, unique=true)
 
-#     def initialize(self):
-#         if self.currentRoom == 0:
-#             self.currentRoom = Room.objects.first().id
-#             self.save()
+    def initialize(self):
+        if self.currentRoom == 0:
+            self.currentRoom = Room.objects.first().id
+            self.save()
     
