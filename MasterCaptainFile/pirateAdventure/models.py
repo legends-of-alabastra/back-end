@@ -52,18 +52,21 @@ class Room(models.Model):
 # ITEM CLASS'S
 ##########################################################
 #########################################################
-class Item(models.Model):
+class Items(models.Model):
     name = models.CharField(max_length=255, default="DEFAULT ITEM")
     description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
     value = models.IntegerField(default=0)
 
-
-class Weapon(Item):
-    attack_power = models.IntegerField(default=0)
-    durability = models.IntegerField(default=100)
-
     def __str__(self):
         return self.name
+
+
+# class Weapon(Item):
+#     attack_power = models.IntegerField(default=0)
+#     durability = models.IntegerField(default=100)
+
+#     def __str__(self):
+#         return self.name
         
 
 
