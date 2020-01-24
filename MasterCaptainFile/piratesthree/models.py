@@ -1,6 +1,8 @@
 from django.db import models
 
 import sys
+
+
 # sys.path.insert(0, "/MasterCaptainFile/users/api")
 
 # sys.path.append('../')
@@ -16,7 +18,6 @@ class Room(models.Model):
     e_to = models.IntegerField(default=0)
     s_to = models.IntegerField(default=0)
     w_to = models.IntegerField(default=0)
-    
 
     def connectRooms(self, destinationRoom, direction):
         destinationRoomID = destinationRoom.id
@@ -37,18 +38,18 @@ class Room(models.Model):
             else:
                 print("Invalid Direction Input")
                 return
-            
+
             self.save()
 
-    
     def playerNames(self, currentPlayerID):
-        return [p.user.username for p in Player.objects.filter(currentRoom = self.id) if p.id != int(currentPlayerID)]
+        return [p.user.username for p in Player.objects.filter(currentRoom=self.id) if p.id != int(currentPlayerID)]
 
     def playerUUIDs(self, currentPlayerID):
         return [p.uuid for p in Player.objects.filter(currentRoom=self.id) if p.id != int(currentPlayerID)]
 
     def __str__(self):
         return self.title + self.description
+
 
 # ITEM CLASS'S
 ##########################################################
@@ -57,12 +58,12 @@ class Items(models.Model):
     name = models.CharField(max_length=255, default="DEFAULT ITEM")
     description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
     value = models.IntegerField(default=0)
-    x = models.IntegerField(default = 0)
-    y = models.IntegerField(default = 0)
+    x = models.IntegerField(default=0)
+    y = models.IntegerField(default=0)
 
     def location(self):
         return [self.x, self.y]
-        
+
     def __str__(self):
         return self.name
 
@@ -73,20 +74,20 @@ class Weapon(Items):
 
     def __str__(self):
         return self.name
-        
+
 
 class Gem(Items):
-    rarity = models.CharField(default=0)
+    rarity = models.CharField(default="", max_length=50)
 
     def __str__(self):
         return self.name
+
 
 # Total gold carried by player
 class Gold(Items):
-    
+
     def __str__(self):
         return self.name
-
 
 
 # PLAYER CLASS'S
@@ -95,11 +96,11 @@ class Gold(Items):
 
 class Player(models.Model):
     username = models.CharField(max_length=30, blank=False)
-    currentRoom = models.IntegerField(default = 0)
+    currentRoom = models.IntegerField(default=0)
+
     # uuid = models.UUIDField(default = uuid.uuid4, unique=true)
 
     def initialize(self):
         if self.currentRoom == 0:
             self.currentRoom = Room.objects.first().id
             self.save()
-    
