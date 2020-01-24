@@ -57,7 +57,12 @@ class Items(models.Model):
     name = models.CharField(max_length=255, default="DEFAULT ITEM")
     description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
     value = models.IntegerField(default=0)
+    x = models.IntegerField(default = 0)
+    y = models.IntegerField(default = 0)
 
+    def location(self):
+        return [self.x, self.y]
+        
     def __str__(self):
         return self.name
 
@@ -70,6 +75,17 @@ class Weapon(Items):
         return self.name
         
 
+class Gem(Items):
+    rarity = models.CharField(default=0)
+
+    def __str__(self):
+        return self.name
+
+# Total gold carried by player
+class Gold(Items):
+    
+    def __str__(self):
+        return self.name
 
 
 
