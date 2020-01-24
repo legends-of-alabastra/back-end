@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 import sys
 sys.path.append('../')
-from pirateAdventure.models import Player
+from piratesthree.models import Player
 # User Serializer
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -41,4 +41,4 @@ class LoginSerializer(serializers.Serializer):
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = ['username', 'currentRoom', 'uuid']
+        fields = ['username', 'currentRoom']

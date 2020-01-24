@@ -44,8 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'users.apps.UsersConfig',
-    'pirateAdventure.apps.PirateadventureConfig'
-
+    'piratesthree.apps.PiratesthreeConfig'
 ]
 
 REST_FRAMEWORK = {
