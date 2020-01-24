@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="354f5c7c-c43d-4d74-b303-896d3d9579d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MasterCaptainFile/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterCaptainFile/MasterCaptainFile/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MasterCaptainFile/MasterCaptainFile/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterCaptainFile/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/MasterCaptainFile/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterCaptainFile/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MasterCaptainFile/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterCaptainFile/piratesthree/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MasterCaptainFile/piratesthree/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasterCaptainFile/piratesthree/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MasterCaptainFile/piratesthree/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MasterCaptainFile/piratesthree/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MasterCaptainFile/piratesthree/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_gen/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_gen/generate_island.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_gen/generate_map.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_gen/helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_gen/tileset.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/map_gen/generate_map.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="53" column="17" selection-start-line="53" selection-end-line="54" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            <state relative-caret-position="85">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -29,13 +42,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/models.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="85" column="30" lean-forward="true" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
+            <state relative-caret-position="85">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,11 +56,19 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>python</find>
       <find>3.8</find>
       <find>gem</find>
+      <find>generate_map</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -59,23 +80,19 @@
         <option value="$PROJECT_DIR$/MasterCaptainFile/MasterCaptainFile/settings.py" />
         <option value="$PROJECT_DIR$/MasterCaptainFile/Pipfile" />
         <option value="$PROJECT_DIR$/MasterCaptainFile/piratesthree/models.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/map_gen/generate_island.py" />
+        <option value="$PROJECT_DIR$/map_gen/generate_map.py" />
+        <option value="$PROJECT_DIR$/MasterCaptainFile/piratesthree/map_gen/generate_island.py" />
+        <option value="$PROJECT_DIR$/MasterCaptainFile/piratesthree/map_gen/generate_map.py" />
         <option value="$PROJECT_DIR$/MasterCaptainFile/piratesthree/views.py" />
+        <option value="$PROJECT_DIR$/MasterCaptainFile/piratesthree/urls.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/back-end.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1905" />
-    <option name="width" value="1948" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-15" />
+    <option name="width" value="2175" />
     <option name="height" value="2175" />
   </component>
   <component name="ProjectView">
@@ -116,6 +133,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\seanw\Desktop\back-end\MasterCaptainFile\piratesthree" />
+      <recent name="C:\Users\seanw\Desktop\back-end" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -138,25 +161,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579842228862</updated>
-      <workItem from="1579842230178" duration="1047000" />
+      <workItem from="1579842230178" duration="2400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1047000" />
+    <option name="totallyTimeSpent" value="2400000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="779" height="870" extended-state="0" />
-    <editor active="true" />
+    <frame x="-6" y="-6" width="1549" height="877" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31396958" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17079705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.33242875" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3293011" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -213,6 +235,13 @@
     <entry file="file://$PROJECT_DIR$/MasterCaptainFile/Procfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="128" column="10" lean-forward="true" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -223,12 +252,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/map_gen/tileset.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/map_gen/config.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/map_gen/generate_island.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/map_gen/generate_map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="53" column="17" selection-start-line="53" selection-end-line="54" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="85">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MasterCaptainFile/piratesthree/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
