@@ -27,18 +27,18 @@ def grow(island, coordinates, chance):
             else: grow(island, {'x': coordinates['x']-1, 'y': coordinates['y']}, chance)
 
 def trim(island):
-    island = list(filter(lambda x: ft.reduce(lambda sum,el : sum+el, x) is not 0, island))
+    island = list(filter(lambda x: ft.reduce(lambda sum,el : sum+el, x) != 0, island))
     min = len(island[0])
     max = 0
     for row in range(len(island)):
         for col in range(len(island[0])):
-            if island[row][col] is not 0:
+            if island[row][col] != 0:
                 if col < min:
                     min = col
                     break
     for row in range(len(island)):
         for col in range(len(island[0])-1,-1,-1):
-            if island[row][col] is not 0:
+            if island[row][col] != 0:
                 if col > max:
                     max = col
                     break
@@ -73,16 +73,16 @@ def cleanup(island):
 def shore_tile(island, tileset, row, col):
     island_width = len(island[0])-1
     island_height = len(island)-1
-    if row is 0 or row is not 0 and island[row-1][col] is 0:
-        if col is 0 or col is not 0 and island[row][col-1] is 0: return get_tile(tileset['corner'])
-        elif col is island_width or col is not island_width and island[row][col+1] is 0: return rotate(get_tile(tileset['corner']),90)
+    if row == 0 or row != 0 and island[row-1][col] == 0:
+        if col == 0 or col != 0 and island[row][col-1] == 0: return get_tile(tileset['corner'])
+        elif col == island_width or col != island_width and island[row][col+1] == 0: return rotate(get_tile(tileset['corner']),90)
         else: return get_tile(tileset['side'])
-    if row is island_height or row is not island_height and island[row+1][col] is 0:
-        if col is 0 or col is not 0 and island[row][col-1] is 0: return rotate(get_tile(tileset['corner']),270)
-        elif col is island_width or col is not island_width and island[row][col+1] is 0: return rotate(get_tile(tileset['corner']),180)
+    if row == island_height or row != island_height and island[row+1][col] == 0:
+        if col == 0 or col != 0 and island[row][col-1] == 0: return rotate(get_tile(tileset['corner']),270)
+        elif col == island_width or col != island_width and island[row][col+1] == 0: return rotate(get_tile(tileset['corner']),180)
         else: return rotate(get_tile(tileset['side']),180)
-    if col is 0 or col is not 0 and island[row][col-1] is 0: return rotate(get_tile(tileset['side']), 270)
-    if col is island_width or col is not island_width and island[row][col+1] is 0: return rotate(get_tile(tileset['side']),90)
+    if col == 0 or col != 0 and island[row][col-1] == 0: return rotate(get_tile(tileset['side']), 270)
+    if col == island_width or col != island_width and island[row][col+1] == 0: return rotate(get_tile(tileset['side']),90)
     else: return rotate(get_tile(tileset['inland']), rand(4)*90)
 
 def tiles(island, tileset):
