@@ -58,8 +58,6 @@ class Items(models.Model):
     name = models.CharField(max_length=255, default="DEFAULT ITEM")
     description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
     value = models.IntegerField(default=0)
-    x = models.IntegerField(default=0)
-    y = models.IntegerField(default=0)
 
     def location(self):
         return [self.x, self.y]
@@ -117,3 +115,9 @@ class Map(models.Model):
     
     def __str__(self):
         return self.tileset
+
+class ItemLocation(models.Model):
+    item_id = models.ForeignKey(Items, on_delete=models.PROTECT)
+    x = models.IntegerField(default = 0)
+    y= models.IntegerField(default = 0)
+    item_id = models.IntegerField(default = 0)

@@ -1,22 +1,3 @@
-[
-        {
-            "model": "piratestwo.Items",
-            "pk": 1,
-            "fields": {
-                "name": "gold",
-                "value": 1
-            }
-        },
-        {
-            "model": "piratestwo.Items",
-            "pk": 2,
-            "fields": {
-                "name": "gem",
-                "value": 100
-            }
-        }
-]
-
 
 [ {"model": "piratestwo.ItemLocation", "pk": 1, "fields": {"x": 38, "y": 99, "item_id": 1}}, {"model": "piratestwo.ItemLocation", "pk": 2, "fields": {"x": 97, "y": 91, "item_id": 1}}, {"model": "piratestwo.ItemLocation", "pk": 3, "fields": {"x": 83, "y": 27, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 4, "fields": {"x": 85, "y": 47, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 5, "fields": {"x": 17, "y": 33, "item_id": 1}}, {"model": "piratestwo.ItemLocation", "pk": 6, "fields": {"x": 15, "y": 27, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 7, "fields": {"x": 29, "y": 12, "item_id": 1}}, {"model": "piratestwo.ItemLocation", "pk": 8, "fields": {"x": 52, "y":
     94, "item_id": 1}}, {"model": "piratestwo.ItemLocation", "pk": 9, "fields": {"x": 96, "y": 4, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 10, "fields": {"x": 19, "y": 68, "item_id": 1}}, {"model": "piratestwo.ItemLocation", "pk": 11, "fields": {"x": 94, "y": 89, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 12, "fields": {"x": 94, "y": 62, "item_id": 1}}, {"model": "piratestwo.ItemLocation", "pk": 13, "fields": {"x": 15, "y": 96, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 14, "fields": {"x": 47, "y": 89, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 15, "fields": {"x": 67, "y": 21, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 16, "fields": {"x": 13, "y": 7, "item_id": 2}}, {"model": "piratestwo.ItemLocation", "pk": 17,

@@ -1,4 +1,4 @@
-from .models import Items, Map
+from .models import Items, Map, ItemLocation
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.core.exceptions import ObjectDoesNotExist
@@ -10,13 +10,13 @@ from .serializers import MapSerializer
 from .map_data import map_data
 
 @api_view(["POST"])
-def item_info(request):
+def item_location(request):
     player_location_x = request.data.get("x")
     player_location_y = request.data.get("y")
-    print(player_location_x)
 
     try:
-        item_data = Items.objects.values().get(x=player_location_x, y=player_location_y)
+        item_location = ItemLocation.objects.values().get(x=player_location_x, y=player_location_y)
+        item_data = Items.objects.values().get(id = item_location['id'])
         return Response(item_data)
     except ObjectDoesNotExist:
         return Response("Sorry nothing up in here")
