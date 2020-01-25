@@ -41,12 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'users.apps.UsersConfig',
-    'piratesthree.apps.PiratesthreeConfig'
+    'piratestwo.apps.PiratestwoConfig'
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
 }
+FIXTURE_DIR = ['piratestwo.fixtures.Item']
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -84,8 +85,11 @@ WSGI_APPLICATION = 'MasterCaptainFile.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'Cc3058366',
+        'HOST': 'localhost'
     }
 }
 

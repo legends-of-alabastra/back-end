@@ -1,0 +1,18 @@
+[
+        {
+            "model": "piratestwo.Items",
+            "pk": 1,
+            "fields": {
+                "name": "gold",
+                "value": 1
+            }
+        },
+        {
+            "model": "piratestwo.Items",
+            "pk": 2,
+            "fields": {
+                "name": "gem",
+                "value": 100
+            }
+        }
+]

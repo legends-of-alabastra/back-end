@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 import sys
 sys.path.append('../')
-from piratesthree.models import Player
+from piratestwo.models import Player
 # User Serializer
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

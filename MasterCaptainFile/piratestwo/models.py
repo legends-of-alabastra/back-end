@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.postgres.fields import ArrayField
 import sys
 
 
@@ -96,11 +96,24 @@ class Gold(Items):
 
 class Player(models.Model):
     username = models.CharField(max_length=30, blank=False)
-    currentRoom = models.IntegerField(default=0)
+    x = models.IntegerField(default=0)
+    y = models.IntegerField(default=0)
+
 
     # uuid = models.UUIDField(default = uuid.uuid4, unique=true)
+
+    def location(self):
+        return [self.x, self.y]
 
     def initialize(self):
         if self.currentRoom == 0:
             self.currentRoom = Room.objects.first().id
             self.save()
+
+class Map(models.Model):
+    tileset = ArrayField(ArrayField(models.IntegerField()))
+    map = ArrayField(ArrayField(models.IntegerField()))
+    colors = ArrayField(ArrayField(models.IntegerField()))
+    
+    def __str__(self):
+        return self.tileset
