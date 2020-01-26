@@ -97,7 +97,6 @@ class Player(models.Model):
     x = models.IntegerField(default=0)
     y = models.IntegerField(default=0)
 
-
     # uuid = models.UUIDField(default = uuid.uuid4, unique=true)
 
     def location(self):

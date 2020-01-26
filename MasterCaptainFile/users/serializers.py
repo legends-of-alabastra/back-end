@@ -1,15 +1,20 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, get_user_model
+from .models import UserInfo
 import sys
 sys.path.append('../')
-from piratestwo.models import Player
+
+# Item Serializer
+class ItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserInfo
+        fields = ('username', 'gold', 'gem')
 # User Serializer
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'email')
-
 # Register 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -36,9 +41,3 @@ class LoginSerializer(serializers.Serializer):
         if user and user.is_active:
             return user
         raise serializers.ValidationError("Incorrect Credentials")
-
-# Player Serializer
-class PlayerSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Player
-        fields = ['username', 'currentRoom']
