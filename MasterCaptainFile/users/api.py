@@ -37,7 +37,7 @@ class LoginAPI(generics.GenericAPIView):
         serializer = self.get_serializer(data = request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
-        pusher_client.trigger('my-channel', 'room', {'description': item_locations })
+        pusher_client.trigger('my-channel', 'itemArray', {'description': item_locations })
         pusher_client.trigger('my-channel', 'room', {'description': f'{user} has logged in'})
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
