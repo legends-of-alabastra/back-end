@@ -48,5 +48,14 @@
             "value": 200000.00,
             "weapons_power": 100000.00
         }
+    },
+    {
+        "model": "piratestwo.Merchant",
+        "pk": 6,
+        "fields": {
+            "name": "Trade",
+            "description": "Trade 10 pieces of Gold for a Gem",
+            "value": 100.00
+        }
     }
 ]

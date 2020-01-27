@@ -1,4 +1,4 @@
-from .models import Items, Map, ItemLocation, Merchant
+from .models import Items, Map, ItemLocation, Merchant, PlayerWeapons
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.core.exceptions import ObjectDoesNotExist
@@ -50,21 +50,23 @@ def merchant_weapons(request):
     print(list(all_weapons))
     return Response(all_weapons)
 
-@api_view(["POST"])
-def buy_weapon(request):
-    name = request.data.get('id')
-    print(name, 'name')
-    weapon = Merchant.objects.values().get(name = request.data.get("name"))
-    user = UserInfo.objects.values().get(id = request.data.get("id"))
-    if request.data.get('gold'):
-        gold = user['gold']
-        item_cost = weapon['values']
-        print(gold, item_cost)
-
-
-
 
 @api_view(["GET"])
 def bigbang(request):
     item_location = ItemLocation.objects.all().delete()
     return Response(item_location)
+
+
+@api_view(["PUT"])
+def buy_weapon(request):
+    name = request.data.get('name')
+    weapon = Merchant.objects.values().get(name = request.data.get("name"))
+    user = UserInfo.objects.values().get(id = request.data.get("id"))
+    weapon_value = weapon['value']
+    user_gem = user['gem']
+    if weapon_value <= user_gem:
+        
+        print(weapon)
+        print('can afford', weapon_value,"weaponVlaue", user_gem, "user-gem")
+    else:
+        print('sorry cant buy',weapon_value,"weaponVlaue", user_gem, "user-gem")

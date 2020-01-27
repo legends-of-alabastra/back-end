@@ -124,6 +124,7 @@ class Merchant(models.Model):
     description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
     value = models.IntegerField(default=0)
     weapons_power =  models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
+    trade = models.CharField(max_length= 255, default = "DEFAULT")
 
 class MerchantWeapons(Merchant):
     attack_power = models.IntegerField(default=0)
@@ -134,9 +135,9 @@ class MerchantWeapons(Merchant):
 
 class PlayerWeapons(models.Model):
     player_id = models.IntegerField(default=0)
-    name = models.CharField(max_length=255, default="DEFAULT ITEM")
-    description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
-    weapons_power =  models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
-
+    name = models.CharField(max_length=255, default="DEFAULT")
+    description = models.CharField(max_length=255, default="DEFAULT")
+    weapons_power =  models.CharField(max_length=255, default="DEFAULT")
+    
     def __str__(self):
         return self.name

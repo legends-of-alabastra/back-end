@@ -44,5 +44,5 @@ def gen_item_locations(map, num_of_items):
         })
     return items
 
-for i in gen_item_locations(map_data['map'], 4000):
-    print(i)
+# for i in gen_item_locations(map_data['map'], 4000):
+#     print(i)
