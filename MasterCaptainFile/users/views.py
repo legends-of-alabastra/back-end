@@ -23,7 +23,7 @@ pusher_client = pusher.Pusher(
 )
 
 @api_view(['GET'])
-def item_locations(request):
+def pusher_item_locations(request):
     item_locations =  list(ItemLocation.objects.all().values())
     pusher_client.trigger('my-channel', 'itemArray', {'description': item_locations })
     return Response(item_locations)
