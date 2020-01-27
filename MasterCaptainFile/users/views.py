@@ -5,6 +5,7 @@ from .models import UserInfo
 from rest_framework import status
 import json
 from django.http import JsonResponse
+
 # Create your views here.
 
 @api_view(['POST'])
@@ -17,9 +18,21 @@ def player_items(request):
     return Response("sorry", status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['PUT'])
-def add_items(request, id):
+def add_items(request):
     if request.method == 'PUT':
-        gold = UserInfo.objects.values().get['gold']
-        print(gold)
-        gem = UserInfo.objects.values().get(gem)
-        print(gem)
+        user = UserInfo.objects.values().get(id = request.data.get("id"))
+        # is_gold = request.data['gold']
+        # is_gem = request.data['gold']
+        # print(is_gold, 'is gold')
+        if request.data.get('gold'): 
+            gold = user['gold']
+            updated_gold = int(request.data['gold']) + int(gold)
+            data = UserInfo(id = user['id'], username = user['username'], gold = updated_gold, gem = user['gem'])
+            data.save()
+            return Response(user)
+        elif request.data.get('gem'):
+            gem = user['gem']
+            updated_gem = int(request.data['gem']) + int(gem)
+            data = UserInfo(id = user['id'], username = user['username'],  gold = user['gold'], gem = updated_gem)
+            data.save()
+            return Response(user)
