@@ -6,6 +6,6 @@ class UserInfo(models.Model):
     username  = models.CharField(max_length=255, default="DEFAULT DESCRIPTION", unique= True)
     gold = models.IntegerField(default = 0)
     gem = models.IntegerField(default = 0)
-
+    
     def __str__(self):
         return self.username

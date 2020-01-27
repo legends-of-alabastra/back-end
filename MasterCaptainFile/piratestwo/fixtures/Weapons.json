@@ -3,18 +3,50 @@
         "model": "piratestwo.Merchant",
         "pk": 1,
         "fields": {
-            "name": "Deathstar Laser",
-            "description": "A terrifying weapon capable of destory whole ships.",
-            "value": 200000.00,
-            "attack_power": 100000.00
+            "name": "Cannon",
+            "description": "A cannon to blow your enemies to away",
+            "value": 1000.00,
+            "weapons_power": 100.00
         }
     },
     {
-        "model": "piratestwo.Items",
+        "model": "piratestwo.Merchant",
         "pk": 2,
         "fields": {
-            "name": "gem",
-            "value": 100
+            "name": "Sharks with Lasers",
+            "description": "Heard of dogs? Why not have these as guard pets?",
+            "value": 15000,
+            "weapons_power": 150.00
+        }
+    },
+        {
+        "model": "piratestwo.Merchant",
+        "pk": 3,
+        "fields": {
+            "name": "Stick",
+            "description": "A weapon for that is all terrain.",
+            "value": 1,
+            "weapons_power": 5.00
+        }
+    },
+    {
+        "model": "piratestwo.Merchant",
+        "pk": 4,
+        "fields": {
+            "name": "Sword",
+            "description": "A shiny sharp sword",
+            "value": 100.00,
+            "weapons_power": 20.00
+        }
+    },
+    {
+        "model": "piratestwo.Merchant",
+        "pk": 5,
+        "fields": {
+            "name": "Deathstar Laser",
+            "description": "A terrifying weapon capable of destory whole ships.",
+            "value": 200000.00,
+            "weapons_power": 100000.00
         }
     }
 ]

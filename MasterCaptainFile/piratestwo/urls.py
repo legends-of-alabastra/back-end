@@ -7,4 +7,5 @@ urlpatterns = [
     path("map/", views.map),
     path("merchant/", views.merchant_weapons),
     path("bigbang/", views.bigbang),
+    path("getItems/", views.get_items)
 ]

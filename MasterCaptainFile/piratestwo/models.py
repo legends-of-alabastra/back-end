@@ -123,6 +123,7 @@ class Merchant(models.Model):
     name = models.CharField(max_length=255, default="DEFAULT ITEM")
     description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
     value = models.IntegerField(default=0)
+    weapons_power =  models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
 
 class MerchantWeapons(Merchant):
     attack_power = models.IntegerField(default=0)

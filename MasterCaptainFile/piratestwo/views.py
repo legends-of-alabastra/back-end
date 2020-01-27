@@ -36,13 +36,16 @@ def map(request):
 
 @api_view(["GET"])
 def get_items(request):
-    items = Items.object.all()
+    print('hi')
+    items = list(Items.objects.all())   
 
     return Response(items)
 
 @api_view(["GET"])
 def merchant_weapons(request):
-    all_weapons = Merchant.objects.all()
+    print('hi')
+    all_weapons = Merchant.objects.values().all()
+    print(list(all_weapons))
     return Response(all_weapons)
 
 @api_view(["GET"])
