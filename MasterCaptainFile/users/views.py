@@ -9,6 +9,9 @@ from rest_framework import status
 import json
 from django.http import JsonResponse
 import pusher
+import sys
+sys.path.append("..")
+from piratestwo.models import ItemLocation
 
 # Create your views here.
 pusher_client = pusher.Pusher(
@@ -18,6 +21,12 @@ pusher_client = pusher.Pusher(
   cluster='us2',
   ssl=True
 )
+
+@api_view(['GET'])
+def item_locations(request):
+    item_locations =  list(ItemLocation.objects.all().values())
+    pusher_client.trigger('my-channel', 'itemArray', {'description': item_locations })
+    return Response(item_locations)
 
 
 @api_view(['POST'])

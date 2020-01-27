@@ -23,7 +23,6 @@ class RegisterAPI(generics.GenericAPIView):
         serializer = self.get_serializer(data = request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
-        pusher_client.trigger('my-channel', 'itemArray', {'description': item_locations })
         pusher_client.trigger('my-channel', 'room', {'description': f'{user} has just became a Pirate of Alabastra!'})
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
@@ -34,11 +33,9 @@ class RegisterAPI(generics.GenericAPIView):
 class LoginAPI(generics.GenericAPIView):
     serializer_class = LoginSerializer
     def post(self, request, *args, **kwargs):
-        item_locations =  list(ItemLocation.objects.all().values())
         serializer = self.get_serializer(data = request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
-        pusher_client.trigger('my-channel', 'itemArray', {'description': item_locations })
         pusher_client.trigger('my-channel', 'room', {'description': f'{user} has logged in'})
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
