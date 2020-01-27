@@ -65,6 +65,12 @@ class Items(models.Model):
     def __str__(self):
         return self.name
 
+class Weapon(Items):
+    attack_power = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+
 class Gem(Items):
     rarity = models.CharField(default="", max_length=50)
 
@@ -118,9 +124,7 @@ class Merchant(models.Model):
     description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
     value = models.IntegerField(default=0)
 
-
-
-class Weapon(Merchant):
+class MerchantWeapons(Merchant):
     attack_power = models.IntegerField(default=0)
 
     def __str__(self):

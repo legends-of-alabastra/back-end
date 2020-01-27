@@ -1,4 +1,4 @@
-from .models import Items, Map, ItemLocation
+from .models import Items, Map, ItemLocation, Merchant
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.core.exceptions import ObjectDoesNotExist
@@ -43,7 +43,6 @@ def get_items(request):
 @api_view(["GET"])
 def merchant_weapons(request):
     all_weapons = Merchant.objects.all()
-
     return Response(all_weapons)
 
 @api_view(["GET"])
