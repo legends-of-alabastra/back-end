@@ -52,7 +52,8 @@ def merchant_weapons(request):
 
 @api_view(["POST"])
 def buy_weapon(request):
-    print(request.data.get("name"))
+    name = request.data.get('id')
+    print(name, 'name')
     weapon = Merchant.objects.values().get(name = request.data.get("name"))
     user = UserInfo.objects.values().get(id = request.data.get("id"))
     if request.data.get('gold'):
