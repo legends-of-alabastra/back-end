@@ -23,7 +23,8 @@ class RegisterAPI(generics.GenericAPIView):
         serializer = self.get_serializer(data = request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
-        pusher_client.trigger('my-channel', 'itemArray', {'description': f'{user} has just became a Pirate of Alabastra!'})
+        pusher_client.trigger('my-channel', 'itemArray', {'description': item_locations })
+        pusher_client.trigger('my-channel', 'room', {'description': f'{user} has just became a Pirate of Alabastra!'})
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]
