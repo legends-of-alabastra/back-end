@@ -15,9 +15,13 @@ def item_location(request):
     player_location_y = request.data.get("y")
 
     try:
+        print('trying to get item_location')
         item_location = ItemLocation.objects.values().get(x=player_location_x, y=player_location_y)
+        print("this is the item_location")
         item_key = item_location.get('id')
+        print("this is the item_key")
         item_data = Items.objects.values().get(id = item_location['item_id'])
+        print('Passed the item_data')
         item_data['item_key'] = item_key
         print(item_data)
         return Response(item_data)
