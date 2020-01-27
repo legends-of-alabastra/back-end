@@ -39,7 +39,7 @@ def map(request):
 
 @api_view(["GET"])
 def get_items(request):
-    items = Items.objects.values().all()
+    items = ItemLocation.objects.values().all()
 
     return Response(list(items))
 
@@ -52,7 +52,7 @@ def merchant_weapons(request):
 
 @api_view(["POST"])
 def buy_weapon(request):
-    print(request.data.get(''))
+    print(request.data.get("name"))
     weapon = Merchant.objects.values().get(name = request.data.get("name"))
     user = UserInfo.objects.values().get(id = request.data.get("id"))
     if request.data.get('gold'):
