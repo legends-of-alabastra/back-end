@@ -17,7 +17,6 @@ pusher_client = pusher.Pusher(
   cluster='us2',
   ssl=True
 )
-pusher_client.trigger('my-channel', 'room', {'description': 'The Kraken is nye.'})
 
 @api_view(["POST"])
 def item_location(request):
@@ -26,7 +25,7 @@ def item_location(request):
 
     try:
         item_location = ItemLocation.objects.values().get(x=player_location_x, y=player_location_y)
-        item_data = Items.objects.values().get(id = item_location['id'])
+        item_data = Items.objects.values().get(id = item_location['item_id'])
         return Response(item_data)
     except ObjectDoesNotExist:
         return Response("Sorry nothing up in here")

@@ -7,13 +7,19 @@ import json
 from django.http import JsonResponse
 # Create your views here.
 
-@api_view(['POST', 'PUT'])
+@api_view(['POST'])
 def player_items(request):
     if request.method == 'POST':
-        print('hi')
-        data = UserInfo(username = request.data['username'], gold = request.data['gold'], gem = request.data['gem'])
-        print("dta", data)
+        data = UserInfo(id = request.data['id'], username = request.data['username'], gold = request.data['gold'], gem = request.data['gem'])
         data.save()
         user_items = UserInfo.objects.values().get(username = request.data['username'])
         return Response(user_items, status=status.HTTP_201_CREATED)
     return Response("sorry", status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT'])
+def add_items(request, id):
+    if request.method == 'PUT':
+        gold = UserInfo.obejcts.values().get['gold']
+        print(gold)
+        gem = UserInfo.obejcts.values().get(gem)
+        print(gem)
