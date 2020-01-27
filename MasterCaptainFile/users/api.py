@@ -2,6 +2,15 @@ from rest_framework import generics, permissions
 from rest_framework.response import Response
 from knox.models import AuthToken
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
+import pusher
+
+pusher_client = pusher.Pusher(
+  app_id='937389',
+  key='c94e812bb791c21a37e8',
+  secret='e8ba260f0392ed97ff33',
+  cluster='us2',
+  ssl=True
+)
 
 # Register API
 class RegisterAPI(generics.GenericAPIView):
@@ -24,6 +33,7 @@ class LoginAPI(generics.GenericAPIView):
         serializer = self.get_serializer(data = request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
+        pusher_client.trigger('my-channel', 'room', {'description': f'{user} has logged in'})
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]

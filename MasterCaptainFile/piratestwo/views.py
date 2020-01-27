@@ -8,6 +8,16 @@ from .map_gen.config import config
 from rest_framework import status
 from .serializers import MapSerializer
 from .map_data import map_data
+import pusher
+
+pusher_client = pusher.Pusher(
+  app_id='937389',
+  key='c94e812bb791c21a37e8',
+  secret='e8ba260f0392ed97ff33',
+  cluster='us2',
+  ssl=True
+)
+pusher_client.trigger('my-channel', 'room', {'description': 'The Kraken is nye.'})
 
 @api_view(["POST"])
 def item_location(request):
