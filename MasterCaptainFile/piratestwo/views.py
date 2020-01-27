@@ -16,7 +16,10 @@ def item_location(request):
 
     try:
         item_location = ItemLocation.objects.values().get(x=player_location_x, y=player_location_y)
+        item_key = item_location.get('id')
         item_data = Items.objects.values().get(id = item_location['item_id'])
+        item_data['item_key'] = item_key
+        print(item_data)
         return Response(item_data)
     except ObjectDoesNotExist:
         return Response("Sorry nothing up in here")

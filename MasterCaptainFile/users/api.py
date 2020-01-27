@@ -3,6 +3,9 @@ from rest_framework.response import Response
 from knox.models import AuthToken
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
 import pusher
+import sys
+sys.path.append("..")
+from piratestwo.models import ItemLocation
 
 pusher_client = pusher.Pusher(
   app_id='937389',
@@ -20,7 +23,7 @@ class RegisterAPI(generics.GenericAPIView):
         serializer = self.get_serializer(data = request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
-        pusher_client.trigger('my-channel', 'room', {'description': f'{user} has just became a Pirate of Alabastra!'})
+        pusher_client.trigger('my-channel', 'itemArray', {'description': f'{user} has just became a Pirate of Alabastra!'})
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]
@@ -29,15 +32,17 @@ class RegisterAPI(generics.GenericAPIView):
 # Login API
 class LoginAPI(generics.GenericAPIView):
     serializer_class = LoginSerializer
-
     def post(self, request, *args, **kwargs):
+        item_locations =  list(ItemLocation.objects.all().values())
         serializer = self.get_serializer(data = request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
+        pusher_client.trigger('my-channel', 'room', {'description': item_locations })
         pusher_client.trigger('my-channel', 'room', {'description': f'{user} has logged in'})
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
-            "token": AuthToken.objects.create(user)[1]
+            "token": AuthToken.objects.create(user)[1],
+            "item_locations": item_locations
         })
 
 # Get User API
