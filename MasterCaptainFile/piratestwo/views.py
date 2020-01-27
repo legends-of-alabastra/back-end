@@ -65,8 +65,14 @@ def buy_weapon(request):
     weapon_value = weapon['value']
     user_gem = user['gem']
     if weapon_value <= user_gem:
-        
-        print(weapon)
-        print('can afford', weapon_value,"weaponVlaue", user_gem, "user-gem")
+        print(user['gem'], 'PREV GEMS')
+        new_gem = user_gem - weapon_value
+        updated_user = UserInfo(id = user['id'], username = user['username'], gold = user['gold'], gem = new_gem)
+        player_stuff = PlayerWeapons(player_id = user['id'], name = weapon['name'], description = weapon['description'], weapons_power = weapon['weapons_power'])
+        updated_user.save()
+        player_stuff.save()
+        player_weapons = PlayerWeapons.objects.values().filter(player_id = user['id'])
+        print(list(player_weapons))
+        return Response(list(player_weapons))
     else:
-        print('sorry cant buy',weapon_value,"weaponVlaue", user_gem, "user-gem")
+        return Response( f"Sorry cannnot afford the {name}" )
