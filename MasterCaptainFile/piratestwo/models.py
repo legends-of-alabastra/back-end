@@ -65,15 +65,6 @@ class Items(models.Model):
     def __str__(self):
         return self.name
 
-
-class Weapon(Items):
-    attack_power = models.IntegerField(default=0)
-    durability = models.IntegerField(default=100)
-
-    def __str__(self):
-        return self.name
-
-
 class Gem(Items):
     rarity = models.CharField(default="", max_length=50)
 
@@ -120,3 +111,17 @@ class ItemLocation(models.Model):
     x = models.IntegerField(default = 0)
     y= models.IntegerField(default = 0)
     item_id = models.IntegerField(default = 0)
+
+
+class Merchant(models.Model):
+    name = models.CharField(max_length=255, default="DEFAULT ITEM")
+    description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
+    value = models.IntegerField(default=0)
+
+
+
+class Weapon(Merchant):
+    attack_power = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name

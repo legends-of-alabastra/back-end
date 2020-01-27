@@ -1,0 +1,20 @@
+[
+    {
+        "model": "piratestwo.Merchant",
+        "pk": 1,
+        "fields": {
+            "name": "Deathstar Laser",
+            "description": "A terrifying weapon capable of destory whole ships.",
+            "value": 200000.00,
+            "attack_power": 100000.00
+        }
+    },
+    {
+        "model": "piratestwo.Items",
+        "pk": 2,
+        "fields": {
+            "name": "gem",
+            "value": 100
+        }
+    }
+]

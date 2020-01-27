@@ -40,18 +40,13 @@ def get_items(request):
 
     return Response(items)
 
+@api_view(["GET"])
+def merchant_weapons(request):
+    all_weapons = Merchant.objects.all()
 
-# @api_view(["POST"])
-# def player_info(request):
-#     try:
-#         player_data = Player.objects.values().get(email=request.data.get('email'))
-#         current_city = map.search_map(player_data.get('city'))
-#         if current_city == -1:
-#             return Response("Player City does not exit")
-#         elif current_city != -1:
-#             player_data['left'] = current_city.left.city if current_city.left else None
-#             player_data['right'] = current_city.right.city if current_city.right else None
-#             player_data['previous'] = current_city.previous.city if current_city.previous else None
-#         return Response(player_data)
-#     except ObjectDoesNotExist:
-#         return Response("Invalid email")
+    return Response(all_weapons)
+
+@api_view(["GET"])
+def bigbang(request):
+    item_location = ItemLocation.objects.all().delete()
+    return Response(item_location)

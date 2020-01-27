@@ -44,4 +44,5 @@ def gen_item_locations(map, num_of_items):
         })
     return items
 
-print(gen_item_locations(map_data['map'], 200),"call item gem")
+for i in gen_item_locations(map_data['map'], 8000):
+    print(i)
