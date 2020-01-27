@@ -9,6 +9,8 @@ from rest_framework import status
 from .serializers import MapSerializer
 from .map_data import map_data
 
+
+
 @api_view(["POST"])
 def item_location(request):
     player_location_x = request.data.get("x")

@@ -64,3 +64,8 @@ def add_items(request):
 
         pusher_client.trigger('my-channel', 'itemArray', {'description': list(ItemLocation.objects.all().values()) })
         return Response(user)
+
+@api_view(["POST"])
+def player_inventory(request):
+    player_info = UserInfo.objects.values().get(id = request.data.get("id"))
+    return Response(player_info)

@@ -11,7 +11,8 @@ urlpatterns = [
     path('api/auth/logout', knox_views.LoginView.as_view(), name= 'knox_logout'),
     path("playeritems/", views.player_items),
     path("additems/", views.add_items),
-    path("getitems/", views.pusher_item_locations)
+    path("getitems/", views.pusher_item_locations),
+    path("playerinventory/", views.player_inventory)
 
     # path('api/auth/logins', views.my_view),
 ]
