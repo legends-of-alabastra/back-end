@@ -130,3 +130,13 @@ class MerchantWeapons(Merchant):
 
     def __str__(self):
         return self.name
+
+
+class PlayerWeapons(models.Model):
+    player_id = models.IntegerField(default=0)
+    name = models.CharField(max_length=255, default="DEFAULT ITEM")
+    description = models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
+    weapons_power =  models.CharField(max_length=255, default="DEFAULT DESCRIPTION")
+
+    def __str__(self):
+        return self.name

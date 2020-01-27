@@ -46,9 +46,6 @@ def add_items(request):
     print(new_items)
     if request.method == 'PUT':
         user = UserInfo.objects.values().get(id = request.data.get("id"))
-        # is_gold = request.data['gold']
-        # is_gem = request.data['gold']
-        # print(is_gold, 'is gold')
         if request.data.get('gold'): 
             gold = user['gold']
             updated_gold = int(request.data['gold']) + int(gold)

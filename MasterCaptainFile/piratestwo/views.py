@@ -8,6 +8,9 @@ from .map_gen.config import config
 from rest_framework import status
 from .serializers import MapSerializer
 from .map_data import map_data
+import sys
+sys.path.append("..")
+from users.models import UserInfo
 
 
 
@@ -36,10 +39,9 @@ def map(request):
 
 @api_view(["GET"])
 def get_items(request):
-    print('hi')
-    items = list(Items.objects.all())   
+    items = Items.objects.values().all()
 
-    return Response(items)
+    return Response(list(items))
 
 @api_view(["GET"])
 def merchant_weapons(request):
@@ -47,6 +49,19 @@ def merchant_weapons(request):
     all_weapons = Merchant.objects.values().all()
     print(list(all_weapons))
     return Response(all_weapons)
+
+@api_view(["POST"])
+def buy_weapon(request):
+    print(request.data.get(''))
+    weapon = Merchant.objects.values().get(name = request.data.get("name"))
+    user = UserInfo.objects.values().get(id = request.data.get("id"))
+    if request.data.get('gold'):
+        gold = user['gold']
+        item_cost = weapon['values']
+        print(gold, item_cost)
+
+
+
 
 @api_view(["GET"])
 def bigbang(request):
