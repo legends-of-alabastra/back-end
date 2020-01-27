@@ -19,7 +19,7 @@ def player_items(request):
 @api_view(['PUT'])
 def add_items(request, id):
     if request.method == 'PUT':
-        gold = UserInfo.obejcts.values().get['gold']
+        gold = UserInfo.objects.values().get['gold']
         print(gold)
-        gem = UserInfo.obejcts.values().get(gem)
+        gem = UserInfo.objects.values().get(gem)
         print(gem)
