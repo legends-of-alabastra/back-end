@@ -58,8 +58,9 @@ def add_items(request):
             data.save()
         
         ItemLocation.objects.filter(id = request.data.get('item_key')).delete() 
-
+        users_name = request.data.get('username')
         pusher_client.trigger('my-channel', 'itemArray', {'description': list(ItemLocation.objects.all().values()) })
+        pusher_client.trigger('my-channel', 'room', {'description': f'{users_name} has found treasure!' })
         return Response(user)
 
 @api_view(["POST"])
