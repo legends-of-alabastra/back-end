@@ -29,7 +29,7 @@ POST: https://alabastraapp.herokuapp.com/api/auth/register </br>
 |  password     | str           |    yes        |               |               
 
 ### Login User
-POST: api/auth/login </br>
+POST: https://alabastraapp.herokuapp.com/api/auth/login </br>
 When posted, it creates a session in the backend, and returns a token for the front end.
 
 | Column        |     Type      |    Required   |   Unique      |           
@@ -72,6 +72,6 @@ The id sent has to be the player's id. The user can either encounter gold or gem
 |  gold or gem     | str           |    yes        |               |      
 
 ### Delete All Item's from the Map
-GET: https://alabastraapp.herokuapp.com/api/bigbang/ </br>
+GET: /api/bigbang/ </br>
 #### Careful ^ </br>
 This deletes all the items located in the map, from the database. Mainly used to add a new batch of Items.
