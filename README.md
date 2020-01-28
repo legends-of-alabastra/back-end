@@ -62,6 +62,15 @@ The requirements are to send that player's current x and y coordinates to seek i
 |  x     |  str          |   yes         |               |               
 |  y     | str           |    yes        |               |               
 
+### Player Picks up Item
+POST: https://alabastraapp.herokuapp.com/additems/
+The id sent has to be the player's id. The user can either encounter gold or gem when they find an item, so then what they find in the next row. 
+
+| Column        |     Type      |    Required   |   Unique      |            
+| ------------- | ------------- | ------------- | ------------- | 
+|  id     |  str          |   yes         |               |               
+|  gold or gem     | str           |    yes        |               |      
+
 ### Delete All Item's from the Map
 GET: https://alabastraapp.herokuapp.com/api/bigbang/ </br>
 #### Careful ^ </br>
