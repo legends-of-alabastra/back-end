@@ -4,7 +4,6 @@
 - [Tech Stack](#tech-stack)
 - [Tables & Routes](#tables)
 
-
 ## Welcome
 
 Find the production server at: https://alabastraapp.herokuapp.com/
@@ -16,7 +15,7 @@ This is the HQ of The Legends of Alabastra MUD Build Weeks Team. Where all the m
 + [Django](https://www.djangoproject.com/) was the Web framework used for rapid, secure, and clean design for the backend.
 + [Python](https://www.python.org/) was the programming language used to write the backend.
 + [PostgreSQL](https://www.postgresql.org/) was implemented as the preferred choice for the database.
-
++ [Pusher](https://pusher.com/docs/chatkit/core-concepts) was utilized to make server calls to the front end, so player's can receive real time feedback from other player's in the game.
 
 ## Tables
 
