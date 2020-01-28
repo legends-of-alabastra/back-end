@@ -29,8 +29,8 @@ def gen_item_locations(map, num_of_items):
     items = []
     for n in range(num_of_items):
         while True:
-            x = rand(len(map[0]))
-            y = rand(len(map))
+            x = rand(len(map[0]) / 10)
+            y = rand(len(map) / 10)
             if map[y][x] == 0: break
         item = gen_items()[rand(len(gen_items()))]
         items.append({
@@ -44,5 +44,5 @@ def gen_item_locations(map, num_of_items):
         })
     return items
 
-# for i in gen_item_locations(map_data['map'], 4000):
-#     print(i)
+for i in gen_item_locations(map_data['map'], 200):
+    print(i)
