@@ -63,7 +63,7 @@ The requirements are to send that player's current x and y coordinates to seek i
 |  y     | str           |    yes        |               |               
 
 ### Player Picks up Item
-POST: https://alabastraapp.herokuapp.com/additems/
+POST: https://alabastraapp.herokuapp.com/additems/ </br>
 The id sent has to be the player's id. The user can either encounter gold or gem when they find an item, so then what they find in the next row. 
 
 | Column        |     Type      |    Required   |   Unique      |            
