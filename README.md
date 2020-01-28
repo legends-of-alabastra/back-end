@@ -38,23 +38,23 @@ When posted, it creates a session in the backend, and returns a token for the fr
 |  password     | str           |    yes        |               |               
 
 ### Logout User
-GET: https://alabastraapp.herokuapp.com/api/auth/logout
+GET: https://alabastraapp.herokuapp.com/api/auth/logout </br>
 Logs the user out of the backend session (remember to clear the cookie/local storage if you set the token there).
 
 ### Map's Data
-GET: https://alabastraapp.herokuapp.com/map/
+GET: https://alabastraapp.herokuapp.com/map/ </br>
 Return's the map's data for the front end to generate the player's map.
 
 ### Merchant's Inventory
-GET: https://alabastraapp.herokuapp.com/api/merchant/
+GET: https://alabastraapp.herokuapp.com/api/merchant/ </br>
 This returns the merchant's inventory for players to buy weapons or trade gold for gems.
 
 ### Receive every Item's Location
-GET: https://alabastraapp.herokuapp.com/api/getItems/
+GET: https://alabastraapp.herokuapp.com/api/getItems/ </br>
 This returns every item in the databases' location on the map.
 
 ### Item in current player's position
-POST: https://alabastraapp.herokuapp.com/api/items/
+POST: https://alabastraapp.herokuapp.com/api/items/ </br>
 The requirements are to send that player's current x and y coordinates to seek if an item is in their current location.
 
 | Column        |     Type      |    Required   |   Unique      |            
