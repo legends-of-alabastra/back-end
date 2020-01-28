@@ -20,33 +20,49 @@ This is the HQ of The Legends of Alabastra MUD Build Weeks Team. Where all the m
 ## Tables
 
 ### Register New User
-| Column        |     Type      |    Required   |   Unique      |     Key       | 
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-|  username     |  str          |   yes         |               |               |
-|  email        | str           |    yes        |  unique       |               |
-|  password     | str           |    yes        |               |               |
+POST: https://alabastraapp.herokuapp.com/api/auth/register </br>
 
-Route
-
-POST: api/auth/register </br>
-Requirements in the table
+| Column        |     Type      |    Required   |   Unique      |
+| ------------- | ------------- | ------------- | ------------- |
+|  username     |  str          |   yes         |               |              
+|  email        | str           |    yes        |  unique       |               
+|  password     | str           |    yes        |               |               
 
 ### Login User
-
-| Column        |     Type      |    Required   |   Unique      |     Key       | 
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-|  username     |  str          |   yes         |               |               |
-|  password     | str           |    yes        |               |               |
-
-Route
-
 POST: api/auth/login </br>
-Requirements in the table
+When posted, it creates a session in the backend, and returns a token for the front end.
 
-When posted, it creates a session in the backend, and returns a token.
+| Column        |     Type      |    Required   |   Unique      |           
+| ------------- | ------------- | ------------- | ------------- | 
+|  username     |  str          |   yes         |               |               
+|  password     | str           |    yes        |               |               
 
 ### Logout User
-GET: api/auth/logout
+GET: https://alabastraapp.herokuapp.com/api/auth/logout
+Logs the user out of the backend session (remember to clear the cookie/local storage if you set the token there).
 
-Logs the user out of the backend session.
+### Map's Data
+GET: https://alabastraapp.herokuapp.com/map/
+Return's the map's data for the front end to generate the player's map.
 
+### Merchant's Inventory
+GET: https://alabastraapp.herokuapp.com/api/merchant/
+This returns the merchant's inventory for players to buy weapons or trade gold for gems.
+
+### Receive every Item's Location
+GET: https://alabastraapp.herokuapp.com/api/getItems/
+This returns every item in the databases' location on the map.
+
+### Item in current player's position
+POST: https://alabastraapp.herokuapp.com/api/items/
+The requirements are to send that player's current x and y coordinates to seek if an item is in their current location.
+
+| Column        |     Type      |    Required   |   Unique      |            
+| ------------- | ------------- | ------------- | ------------- | 
+|  x     |  str          |   yes         |               |               
+|  y     | str           |    yes        |               |               
+
+### Delete All Item's from the Map
+GET: https://alabastraapp.herokuapp.com/api/bigbang/ </br>
+#### Careful ^ </br>
+This deletes all the items located in the map, from the database. Mainly used to add a new batch of Items.
