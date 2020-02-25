@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Alabastra',
         'USER': 'postgres',
-        'PASSWORD': 'Cc3058366',
+        'PASSWORD': '',
         'HOST': 'localhost'
     }
 }
